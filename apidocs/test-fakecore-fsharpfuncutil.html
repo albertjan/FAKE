@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>FSIHelper - FAKE - F# Make</title>
+    <title>FSharpFuncUtil - FAKE - F# Make</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Steffen Forkmann, Mauricio Scheffer, Colin Bull">
@@ -36,205 +36,175 @@
 
 
 
-<h1>FSIHelper</h1>
+<h1>FSharpFuncUtil</h1>
 <div class="xmldoc">
-<p>Contains helper functions which allow to interact with the F# Interactive.</p>
 </div>
-
-<!-- Render nested types and modules, if there are any -->
-  <h2>Nested types and modules</h2>
-  <div>
-      <table class="table table-bordered type-list">
-    <thead>
-      <tr><td>Type</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td class="type-name">
-            <a href="fake-fsihelper-fsiargs.html">FsiArgs</a>
-          </td>
-          <td class="xmldoc"></td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-  <h3>Functions and values</h3>
+  <h3>Static members</h3>
   <table class="table table-bordered member-list">
     <thead>
-      <tr><td>Function or value</td><td>Description</td></tr>
+      <tr><td>Static member</td><td>Description</td></tr>
     </thead>
     <tbody>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '144', 144)" onmouseover="showTip(event, '144', 144)">
-            executeBuildScriptWithArgsAndReturnMessages (...)
+          <code onmouseout="hideTip(event, '1608', 1608)" onmouseover="showTip(event, '1608', 1608)">
+            Create(func)
           </code>
-          <div class="tip" id="144">
-            <strong>Signature:</strong> workingDirectory:&#39;?8173 -&gt; script:string -&gt; scriptArgs:string [] -&gt; bool * ConsoleMessage list<br />
-                          <strong>Type parameters:</strong> '?8173          </div>
+          <div class="tip" id="1608">
+            <strong>Signature:</strong> func:Func&lt;&#39;a,&#39;b,&#39;c,&#39;d&gt; -&gt; &#39;a -&gt; &#39;b -&gt; &#39;c -&gt; &#39;d<br />
+                          <strong>Type parameters:</strong> 'a, 'b, 'c, 'd          </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/FSIHelper.fs#L141-141" class="github-link">
+            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/CSharpHelper.fs#L30-30" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Run the given buildscript with fsi.exe and allows for extra arguments to the script. Returns output.</p>
-
+          
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '145', 145)" onmouseover="showTip(event, '145', 145)">
-            executeFSI workingDirectory script args
+          <code onmouseout="hideTip(event, '1609', 1609)" onmouseover="showTip(event, '1609', 1609)">
+            Create(func)
           </code>
-          <div class="tip" id="145">
-            <strong>Signature:</strong> workingDirectory:string -&gt; script:string -&gt; args:seq&lt;string * string&gt; -&gt; bool * seq&lt;ConsoleMessage&gt;<br />
-                      </div>
+          <div class="tip" id="1609">
+            <strong>Signature:</strong> func:Func&lt;&#39;a,&#39;b,&#39;c&gt; -&gt; &#39;a -&gt; &#39;b -&gt; &#39;c<br />
+                          <strong>Type parameters:</strong> 'a, 'b, 'c          </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/FSIHelper.fs#L66-66" class="github-link">
+            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/CSharpHelper.fs#L28-28" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Run the given buildscript with fsi.exe</p>
-
+          
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '146', 146)" onmouseover="showTip(event, '146', 146)">
-            executeFSIWithArgs (...)
+          <code onmouseout="hideTip(event, '1610', 1610)" onmouseover="showTip(event, '1610', 1610)">
+            Create(func)
           </code>
-          <div class="tip" id="146">
-            <strong>Signature:</strong> workingDirectory:string -&gt; script:string -&gt; extraFsiArgs:string list -&gt; args:seq&lt;string * string&gt; -&gt; bool<br />
-                      </div>
+          <div class="tip" id="1610">
+            <strong>Signature:</strong> func:Func&lt;&#39;a,&#39;b&gt; -&gt; &#39;a -&gt; &#39;b<br />
+                          <strong>Type parameters:</strong> 'a, 'b          </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/FSIHelper.fs#L75-75" class="github-link">
+            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/CSharpHelper.fs#L26-26" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Run the given build script with fsi.exe and allows for extra arguments to FSI.</p>
-
+          
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '147', 147)" onmouseover="showTip(event, '147', 147)">
-            executeFSIWithScriptArgsAndReturnMessages (...)
+          <code onmouseout="hideTip(event, '1611', 1611)" onmouseover="showTip(event, '1611', 1611)">
+            ToFSharpFunc(func)
           </code>
-          <div class="tip" id="147">
-            <strong>Signature:</strong> workingDirectory:&#39;?8169 -&gt; script:string -&gt; scriptArgs:string [] -&gt; bool * seq&lt;ConsoleMessage&gt;<br />
-                          <strong>Type parameters:</strong> '?8169          </div>
+          <div class="tip" id="1611">
+            <strong>Signature:</strong> func:Action&lt;&#39;a&gt; -&gt; &#39;a -&gt; unit<br />
+                          <strong>Type parameters:</strong> 'a          </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/FSIHelper.fs#L81-81" class="github-link">
+            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/CSharpHelper.fs#L24-24" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Run the given build script with fsi.exe and allows for extra arguments to the script. Returns output.</p>
-
+          
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '148', 148)" onmouseover="showTip(event, '148', 148)">
-            fsiPath 
+          <code onmouseout="hideTip(event, '1612', 1612)" onmouseover="showTip(event, '1612', 1612)">
+            ToFSharpFunc(func)
           </code>
-          <div class="tip" id="148">
-            <strong>Signature:</strong> string<br />
-                      </div>
+          <div class="tip" id="1612">
+            <strong>Signature:</strong> func:Action -&gt; unit -&gt; unit<br />
+                          <strong>Type parameters:</strong> 'a          </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/FSIHelper.fs#L15-15" class="github-link">
+            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/CSharpHelper.fs#L21-21" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>The path to the F# Interactive tool.</p>
-
+          
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '149', 149)" onmouseover="showTip(event, '149', 149)">
-            fsiStartInfo (...)
+          <code onmouseout="hideTip(event, '1613', 1613)" onmouseover="showTip(event, '1613', 1613)">
+            ToFSharpFunc(func)
           </code>
-          <div class="tip" id="149">
-            <strong>Signature:</strong> script:string -&gt; workingDirectory:string -&gt; args:seq&lt;string * string&gt; -&gt; info:ProcessStartInfo -&gt; unit<br />
-                      </div>
+          <div class="tip" id="1613">
+            <strong>Signature:</strong> func:Func&lt;&#39;a,&#39;b,&#39;c,&#39;d&gt; -&gt; &#39;a -&gt; &#39;b -&gt; &#39;c -&gt; &#39;d<br />
+                          <strong>Type parameters:</strong> 'a, 'b, 'c, 'd          </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/FSIHelper.fs#L62-62" class="github-link">
+            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/CSharpHelper.fs#L18-18" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Creates a ProcessStartInfo which is configured to the F# Interactive.</p>
-
+          
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '150', 150)" onmouseover="showTip(event, '150', 150)">
-            runBuildScript (...)
+          <code onmouseout="hideTip(event, '1614', 1614)" onmouseover="showTip(event, '1614', 1614)">
+            ToFSharpFunc(func)
           </code>
-          <div class="tip" id="150">
-            <strong>Signature:</strong> printDetails:bool -&gt; script:string -&gt; extraFsiArgs:string list -&gt; args:seq&lt;string * string&gt; -&gt; bool<br />
-                      </div>
+          <div class="tip" id="1614">
+            <strong>Signature:</strong> func:Func&lt;&#39;a,&#39;b,&#39;c&gt; -&gt; &#39;a -&gt; &#39;b -&gt; &#39;c<br />
+                          <strong>Type parameters:</strong> 'a, 'b, 'c          </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/FSIHelper.fs#L164-164" class="github-link">
+            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/CSharpHelper.fs#L15-15" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Run the given buildscript with fsi.exe</p>
-
+          
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '151', 151)" onmouseover="showTip(event, '151', 151)">
-            runBuildScriptAt (...)
+          <code onmouseout="hideTip(event, '1615', 1615)" onmouseover="showTip(event, '1615', 1615)">
+            ToFSharpFunc(func)
           </code>
-          <div class="tip" id="151">
-            <strong>Signature:</strong> workingDirectory:&#39;?8177 -&gt; printDetails:bool -&gt; script:string -&gt; extraFsiArgs:string list -&gt; args:seq&lt;string * string&gt; -&gt; bool<br />
-                          <strong>Type parameters:</strong> '?8177          </div>
+          <div class="tip" id="1615">
+            <strong>Signature:</strong> func:Func&lt;&#39;a,&#39;b&gt; -&gt; &#39;a -&gt; &#39;b<br />
+                          <strong>Type parameters:</strong> 'a, 'b          </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/FSIHelper.fs#L160-160" class="github-link">
+            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/CSharpHelper.fs#L12-12" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Run the given buildscript with fsi.exe at the given working directory.</p>
-
+          
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '152', 152)" onmouseover="showTip(event, '152', 152)">
-            runBuildScriptWithFsiArgsAt (...)
+          <code onmouseout="hideTip(event, '1616', 1616)" onmouseover="showTip(event, '1616', 1616)">
+            ToFSharpFunc(func)
           </code>
-          <div class="tip" id="152">
-            <strong>Signature:</strong> workingDirectory:&#39;?8175 -&gt; printDetails:bool -&gt; FsiArgs -&gt; args:seq&lt;string * string&gt; -&gt; bool<br />
-                          <strong>Type parameters:</strong> '?8175          </div>
+          <div class="tip" id="1616">
+            <strong>Signature:</strong> func:Func&lt;&#39;a&gt; -&gt; unit -&gt; &#39;a<br />
+                          <strong>Type parameters:</strong> 'a          </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/FSIHelper.fs#L154-154" class="github-link">
+            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/CSharpHelper.fs#L9-9" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Run the given buildscript with fsi.exe at the given working directory.  Provides full access to Fsi options and args.</p>
-
+          
         </td>
       </tr>
     </tbody>
