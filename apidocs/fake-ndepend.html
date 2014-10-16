@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>FileStatus - FAKE - F# Make</title>
+    <title>NDepend - FAKE - F# Make</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Steffen Forkmann, Mauricio Scheffer, Colin Bull">
@@ -36,9 +36,9 @@
 
 
 
-<h1>FileStatus</h1>
+<h1>NDepend</h1>
 <div class="xmldoc">
-<p>Contains helper functions which can be used to retrieve file status information from git.</p>
+<p>Contains a task which allows to run <a href="http://www.ndepend.com/">NDepend</a> on .NET project files.</p>
 </div>
 
 <!-- Render nested types and modules, if there are any -->
@@ -51,10 +51,9 @@
     <tbody>
         <tr>
           <td class="type-name">
-            <a href="fake-git-filestatus-filestatus.html">FileStatus</a>
+            <a href="fake-ndepend-ndependparams.html">NDependParams</a>
           </td>
-          <td class="xmldoc"><p>A type which represents a file status in git.</p>
-</td>
+          <td class="xmldoc"></td>
         </tr>
     </tbody>
   </table>
@@ -70,172 +69,88 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '685', 685)" onmouseover="showTip(event, '685', 685)">
-            cleanWorkingCopy repositoryDir
+          <code onmouseout="hideTip(event, '308', 308)" onmouseover="showTip(event, '308', 308)">
+            buildNDependArgs parameters
           </code>
-          <div class="tip" id="685">
-            <strong>Signature:</strong> repositoryDir:string -&gt; unit<br />
+          <div class="tip" id="308">
+            <strong>Signature:</strong> parameters:NDependParams -&gt; string<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/Git/FileStatus.fs#L73-73" class="github-link">
+            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/NDependHelper.fs#L25-25" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Cleans the working copy by doing a git reset --hard and a clean -f.</p>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '309', 309)" onmouseover="showTip(event, '309', 309)">
+            getWorkingDir workingDir
+          </code>
+          <div class="tip" id="309">
+            <strong>Signature:</strong> workingDir:string -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/NDependHelper.fs#L9-9" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '310', 310)" onmouseover="showTip(event, '310', 310)">
+            NDepend setParams
+          </code>
+          <div class="tip" id="310">
+            <strong>Signature:</strong> setParams:(NDependParams -&gt; NDependParams) -&gt; unit<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/NDependHelper.fs#L43-43" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Runs <a href="http://www.ndepend.com/">NDepend</a> on a .NET project file.</p>
+
+<h2>Parameters</h2>
+
+<ul>
+<li><code>setParams</code> - Function used to manipulate the default NDependDefaults value.</li>
+</ul>
+
+<h2>Sample</h2>
+
+<pre><code> NDepend (fun p -&gt; { p with 
+                    ProjectFile = currentDirectory @@ "NDependProjectFile.ndproj"
+                    CoverageFiles = [artifactsDir @@ "DotCover.xml" ]
+         })
+</code></pre>
 
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '686', 686)" onmouseover="showTip(event, '686', 686)">
-            getAllFiles repositoryDir
+          <code onmouseout="hideTip(event, '311', 311)" onmouseover="showTip(event, '311', 311)">
+            NDependDefaults 
           </code>
-          <div class="tip" id="686">
-            <strong>Signature:</strong> repositoryDir:string -&gt; seq&lt;FileStatus * string&gt;<br />
+          <div class="tip" id="311">
+            <strong>Signature:</strong> NDependParams<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/Git/FileStatus.fs#L34-34" class="github-link">
+            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/NDependHelper.fs#L19-19" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Gets all changed files in the current revision</p>
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '687', 687)" onmouseover="showTip(event, '687', 687)">
-            getChangedFiles (...)
-          </code>
-          <div class="tip" id="687">
-            <strong>Signature:</strong> repositoryDir:string -&gt; revision1:string -&gt; revision2:string -&gt; seq&lt;FileStatus * string&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/Git/FileStatus.fs#L22-22" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Gets the changed files between the given revisions</p>
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '688', 688)" onmouseover="showTip(event, '688', 688)">
-            getChangedFilesInWorkingCopy (...)
-          </code>
-          <div class="tip" id="688">
-            <strong>Signature:</strong> repositoryDir:string -&gt; revision:string -&gt; seq&lt;FileStatus * string&gt;<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/Git/FileStatus.fs#L40-40" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Gets the changed files since the given revision incl. changes in the working copy</p>
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '689', 689)" onmouseover="showTip(event, '689', 689)">
-            getConflictedFiles repositoryDir
-          </code>
-          <div class="tip" id="689">
-            <strong>Signature:</strong> repositoryDir:string -&gt; string list<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/Git/FileStatus.fs#L43-43" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Gets all conflicted files</p>
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '690', 690)" onmouseover="showTip(event, '690', 690)">
-            getRebaseDir repositoryDir
-          </code>
-          <div class="tip" id="690">
-            <strong>Signature:</strong> repositoryDir:string -&gt; string<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/Git/FileStatus.fs#L55-55" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Returns the current rebase directory for the given repository.</p>
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '691', 691)" onmouseover="showTip(event, '691', 691)">
-            isInTheMiddleOfConflictedMerge (...)
-          </code>
-          <div class="tip" id="691">
-            <strong>Signature:</strong> repositoryDir:string -&gt; bool<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/Git/FileStatus.fs#L52-52" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Returns true if the working copy is in a conflicted merge otherwise false</p>
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '692', 692)" onmouseover="showTip(event, '692', 692)">
-            isInTheMiddleOfPatch repositoryDir
-          </code>
-          <div class="tip" id="692">
-            <strong>Signature:</strong> repositoryDir:string -&gt; bool<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/Git/FileStatus.fs#L68-68" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Returns true if the given repository is in the middle of a patch process.</p>
-
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '693', 693)" onmouseover="showTip(event, '693', 693)">
-            isInTheMiddleOfRebase repositoryDir
-          </code>
-          <div class="tip" id="693">
-            <strong>Signature:</strong> repositoryDir:string -&gt; bool<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="https://github.com/fsharp/FAKE/blob/master/src/app/FakeLib/Git/FileStatus.fs#L63-63" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          <p>Returns true if the given repository is in the middle of a rebase process.</p>
-
+          
         </td>
       </tr>
     </tbody>
